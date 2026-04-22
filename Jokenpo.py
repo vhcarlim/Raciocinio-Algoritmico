@@ -54,3 +54,14 @@ if modalidade == 1:
 elif modalidade == 2:
     
 else:
+
+if jogada1 == 1:
+    nome_jogada1 = "✊ Pedra"
+elif jogada1 == 2:
+    nome_jogada1 = "📄 Papel"
+else:
+    nome_jogada1 = "✂️  Tesoura"
+
+if jogada2 == 1:
+    nome_jogada2 = "✊ Pedra"
+    
