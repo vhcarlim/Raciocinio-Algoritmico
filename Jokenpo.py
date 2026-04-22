@@ -49,3 +49,8 @@ for numero in ["3...", "2...", "1...", "Vez!"]:
     time.sleep(0.6)
 print()    
 
+if modalidade == 1:
+    
+elif modalidade == 2:
+    
+else:
