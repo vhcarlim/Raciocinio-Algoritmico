@@ -38,3 +38,14 @@ vitorias1 = 0
 vitorias2 = 0
 empates   = 0
 continuar = "S"
+
+print()
+print(CYAN + "=" * 50 + RESET)
+print(BOLD + "  ⚡ Nova partida começando..." + RESET)
+print(CYAN + "=" * 50 + RESET)
+print()
+for numero in ["3...", "2...", "1...", "Vez!"]:
+    print(YELLOW + BOLD + f"  {numero}" + RESET)
+    time.sleep(0.6)
+print()    
+
