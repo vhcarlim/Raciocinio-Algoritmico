@@ -8,9 +8,6 @@ YELLOW  ="\033[93m"
 CYAN    ="\033[96m"
 MAGENTA ="\033[95m"
 
-# ============================================================
-# BOAS VINDAS
-# ============================================================
 print(CYAN + "=" * 50 + RESET)
 print(BOLD + MAGENTA + " ✊ JOKENPÔ - Pedra, Papel ou Tesoura! ✂️" + RESET)
 print(CYAN + "=" * 50 + RESET)
