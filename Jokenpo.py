@@ -64,4 +64,7 @@ else:
 
 if jogada2 == 1:
     nome_jogada2 = "✊ Pedra"
-    
+elif jogada2 == 2:
+    nome_jogada2 = "📄 Papel"
+else:
+    nome_jogada2 = "✂️  Tesoura"
