@@ -1,4 +1,4 @@
-#Jogo da Floresta
+# Jogo da Floresta
 print("Você está em uma simulação de uma floresta e precisa escolher um caminho para o seu personagem.")
 print("Você pode escolher: esquerda ou direita")
 
