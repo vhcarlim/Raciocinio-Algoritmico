@@ -1,70 +1,132 @@
-import random
-import time
+import random # jogadas aleatórias do computador
+import time # contagem regressiva e pausas
 
-RESET   = "\033[0m"
-BOLD    = "\033[1m"
-RED     = "\033[91m"
-GREEN   = "\033[92m"
-YELLOW  = "\033[93m"
-CYAN    = "\033[96m"
-MAGENTA = "\033[95m"
+# cabeçalho inicial do programa
+print("  Trabalho acadêmico de Raciocínio Algorítmico - JOKENPÔ ")
+time.sleep(1)
+print("  Bem-vindo!")
+print("  Por favor, escolha a modalidade:")
+print("  1 - Humano x Humano")
+print("  2 - Humano x Computador")
+print("  3 - Computador x Computador")
 
-print(CYAN + "=" * 50 + RESET)
-print(BOLD + MAGENTA + "  ✊ JOKENPÔ - Pedra, Papel ou Tesoura! ✂️" + RESET)
-print(CYAN + "=" * 50 + RESET)
-print()
-print(BOLD + "  Bem-vindo ao Jokenpô!\n" + RESET)
-print("  Escolha a modalidade:")
-print("  1 - 👤 Humano x Humano")
-print("  2 - 👤 Humano x 🤖 Computador")
-print("  3 - 🤖 Computador x 🤖 Computador")
-
-modalidade = int(input(BOLD + "\n  Digite 1, 2 ou 3: " + RESET))
+# validação da modalidade escolhida
+modalidade = int(input("  Digite 1, 2 ou 3: "))
 while modalidade < 1 or modalidade > 3:
-    print(RED + "  Modalidade inválida!" + RESET)
-    modalidade = int(input(BOLD + "  Digite 1, 2 ou 3: " + RESET))
-
+    print("  Modalidade invalida!")
+    modalidade = int(input("  Digite 1, 2 ou 3: "))
+# definição dos nomes dos jogadores
 if modalidade == 1:
-    nome1 = input(CYAN + "\n  Nome do Jogador 1: " + RESET)
-    nome2 = input(CYAN + "  Nome do Jogador 2: " + RESET)
+    nome1 = input("  Nome do Jogador 1: ")
+    nome2 = input("  Nome do Jogador 2: ")
 elif modalidade == 2:
-    nome1 = input(CYAN + "\n  Nome do Jogador: " + RESET)
-    nome2 = "🤖 Computador"
+    nome1 = input("  Nome do Jogador: ")
+    nome2 = "Computador"
 else:
-    nome1 = "🤖 Computador 1"
-    nome2 = "🤖 Computador 2"
+    nome1 = "Computador 1"
+    nome2 = "Computador 2"
 
+# inicialização das variáveis de contagem de vitórias e empates
 vitorias1 = 0
 vitorias2 = 0
 empates   = 0
 continuar = "S"
-
-print()
-print(CYAN + "=" * 50 + RESET)
-print(BOLD + "  ⚡ Nova partida começando..." + RESET)
-print(CYAN + "=" * 50 + RESET)
-print()
-for numero in ["3...", "2...", "1...", "Vez!"]:
-    print(YELLOW + BOLD + f"  {numero}" + RESET)
+# loop principal do jogo
+while continuar == "S":
+# início de cada partida com contagem regressiva para criar suspense
+    print("  Nova partida comecando...")
+    print("  3...")
     time.sleep(0.6)
-print()    
+    print("  2...")
+    time.sleep(0.6)
+    print("  1...")
+    time.sleep(0.6)
+# para a modalidade Humano x Humano, as jogadas de ambos os jogadores são solicitadas via input
+    if modalidade == 1:
+        print(f"\n  {nome1}, escolha sua jogada:")
+        print("  1 - Pedra")
+        print("  2 - Papel")
+        print("  3 - Tesoura")
+        jogada1 = int(input("  Digite 1, 2 ou 3: "))
+        while jogada1 < 1 or jogada1 > 3:
+            print("  Jogada invalida!")
+            jogada1 = int(input("  Digite 1, 2 ou 3: "))
+        print(f"\n  {nome2}, escolha sua jogada:")
+        print("  1 - Pedra")
+        print("  2 - Papel")
+        print("  3 - Tesoura")
+        jogada2 = int(input("  Digite 1, 2 ou 3: "))
+        while jogada2 < 1 or jogada2 > 3:
+            print("  Jogada invalida!")
+            jogada2 = int(input("  Digite 1, 2 ou 3: "))
+# para a modalidade Humano x Computador, a jogada do jogador é solicitada via input, enquanto a jogada do computador é gerada aleatoriamente
+    elif modalidade == 2:
+        print(f"\n  {nome1}, escolha sua jogada:")
+        print("  1 - Pedra")
+        print("  2 - Papel")
+        print("  3 - Tesoura")
+        jogada1 = int(input("  Digite 1, 2 ou 3: "))
+        while jogada1 < 1 or jogada1 > 3:
+            print("  Jogada invalida!")
+            jogada1 = int(input("  Digite 1, 2 ou 3: "))
+        jogada2 = random.randint(1, 3)
+# para a modalidade Computador x Computador, as jogadas de ambos os jogadores são geradas aleatoriamente
+    else:
+        jogada1 = random.randint(1, 3)
+        jogada2 = random.randint(1, 3)
+# determinação do nome da jogada do primeiro jogador para exibição posterior
+    if jogada1 == 1:
+        nome_jogada1 = "Pedra"
+    elif jogada1 == 2:
+        nome_jogada1 = "Papel"
+    else:
+        nome_jogada1 = "Tesoura"
+# determinação do nome da jogada do segundo jogador para exibição posterior
+    if jogada2 == 1:
+        nome_jogada2 = "Pedra"
+    elif jogada2 == 2:
+        nome_jogada2 = "Papel"
+    else:
+        nome_jogada2 = "Tesoura"
+# exibição das jogadas de cada jogador
+    print(f"  {nome1} jogou: {nome_jogada1}")
+    time.sleep(1.5)
+    print(f"  {nome2} jogou: {nome_jogada2}")
+    time.sleep(1.5)
+# determinação do vencedor da partida e atualização do placar
+    if jogada1 == jogada2:
+        print("  Empate!")
+        empates = empates + 1
+    elif (jogada1 == 1 and jogada2 == 3) or (jogada1 == 2 and jogada2 == 1) or (jogada1 == 3 and jogada2 == 2):
+        print(f"  {nome1} venceu essa partida!")
+        vitorias1 = vitorias1 + 1
+    else:
+        print(f"  {nome2} venceu essa partida!")
+        vitorias2 = vitorias2 + 1
+# print do placar atualizado após cada partida
+    print("  Placar atual:")
+    print(f"  {nome1}: {vitorias1} vitoria(s)")
+    print(f"  {nome2}: {vitorias2} vitoria(s)")
+    print(f"  Empates: {empates}")
+# opção para continuar jogando ou encerrar o jog
+    print()
+    continuar = input("  Deseja continuar? (S para sim / N para sair): ").strip().upper()
+    while continuar != "S" and continuar != "N":
+        print("  Opção inválida! Digite S ou N.")
+        continuar = input("  Deseja continuar? (S/N): ").strip().upper()
 
-if modalidade == 1:
-    
-elif modalidade == 2:
-    
-else:
+# fim do jogo e exibição do placar final
 
-if jogada1 == 1:
-    nome_jogada1 = "✊ Pedra"
-elif jogada1 == 2:
-    nome_jogada1 = "📄 Papel"
+print("  Fim de jogo! Placar final:")
+print(f"  {nome1}: {vitorias1} vitoria(s)")
+print(f"  {nome2}: {vitorias2} vitoria(s)")
+print(f"  Empates: {empates}")
+if vitorias1 > vitorias2:
+    print(f"  Grande vencedor: {nome1}! Parabens!")
+elif vitorias2 > vitorias1:
+    print(f"  Grande vencedor: {nome2}! Parabens!")
 else:
-    nome_jogada1 = "✂️  Tesoura"
+    print("  O jogo terminou empatado!")
 
-if jogada2 == 1:
-    nome_jogada2 = "✊ Pedra"
-elif jogada2 == 2:
-    nome_jogada2 = "📄 Papel"
-else:
-    nome_jogada2 = "✂️  Tesoura"
+print("  Código desenvolvido por: Felipe, Pedro e Victor")
+print("  Game Over! Até a próxima!")
