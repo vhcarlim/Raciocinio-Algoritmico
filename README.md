@@ -32,3 +32,4 @@ Jogando:
 <img width="1687" height="655" alt="image" src="https://github.com/user-attachments/assets/129e6780-cc78-416a-bccd-23fde778aa02" />
 Encerramento:
 <img width="757" height="660" alt="image" src="https://github.com/user-attachments/assets/2c2f6195-3bc5-41a1-82fb-3f6094496af2" />
+Trabalho entregue em 24/04/2026.
