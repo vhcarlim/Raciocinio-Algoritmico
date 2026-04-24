@@ -3,18 +3,19 @@ import time # contagem regressiva e pausas
 
 # cabeçalho inicial do programa
 print("  Trabalho acadêmico de Raciocínio Algorítmico - JOKENPÔ ")
-time.sleep(1)
-print("  Bem-vindo!")
-print("  Por favor, escolha a modalidade:")
-print("  1 - Humano x Humano")
-print("  2 - Humano x Computador")
-print("  3 - Computador x Computador")
+time.sleep(1.5)
+print("  Bem-vindo! ")
+print("  Por favor, escolha a modalidade: ")
+time.sleep(1.5)
+print("  1 - Humano x Humano ")
+print("  2 - Humano x Computador ")
+print("  3 - Computador x Computador ")
 
 # validação da modalidade escolhida
 modalidade = int(input("  Digite 1, 2 ou 3: "))
 while modalidade < 1 or modalidade > 3:
-    print("  Modalidade invalida!")
-    modalidade = int(input("  Digite 1, 2 ou 3: "))
+    print("  Modalidade inválida!")
+    modalidade = int(input("  Digite exatamente 1, 2 ou 3: "))
 # definição dos nomes dos jogadores
 if modalidade == 1:
     nome1 = input("  Nome do Jogador 1: ")
@@ -36,11 +37,11 @@ while continuar == "S":
 # início de cada partida com contagem regressiva para criar suspense
     print("  Nova partida comecando...")
     print("  3...")
-    time.sleep(0.6)
+    time.sleep(0.5)
     print("  2...")
-    time.sleep(0.6)
+    time.sleep(0.5)
     print("  1...")
-    time.sleep(0.6)
+    time.sleep(0.5)
 # para a modalidade Humano x Humano, as jogadas de ambos os jogadores são solicitadas via input
     if modalidade == 1:
         print(f"\n  {nome1}, escolha sua jogada:")
@@ -49,7 +50,7 @@ while continuar == "S":
         print("  3 - Tesoura")
         jogada1 = int(input("  Digite 1, 2 ou 3: "))
         while jogada1 < 1 or jogada1 > 3:
-            print("  Jogada invalida!")
+            print("  Jogada inválida!")
             jogada1 = int(input("  Digite 1, 2 ou 3: "))
         print(f"\n  {nome2}, escolha sua jogada:")
         print("  1 - Pedra")
@@ -59,7 +60,7 @@ while continuar == "S":
         while jogada2 < 1 or jogada2 > 3:
             print("  Jogada invalida!")
             jogada2 = int(input("  Digite 1, 2 ou 3: "))
-# para a modalidade Humano x Computador, a jogada do jogador é solicitada via input, enquanto a jogada do computador é gerada aleatoriamente
+# para a modalidade Humano x Computador, a jogada do jogador é solicitada via input, enquanto a jogada do computador é gerada aleatoriamente com o random
     elif modalidade == 2:
         print(f"\n  {nome1}, escolha sua jogada:")
         print("  1 - Pedra")
