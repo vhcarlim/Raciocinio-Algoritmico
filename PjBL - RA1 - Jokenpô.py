@@ -34,8 +34,8 @@ empates   = 0
 continuar = "S"
 # loop principal do jogo
 while continuar == "S":
-# início de cada partida com contagem regressiva para criar suspense
-    print("  Nova partida comecando...")
+# início de cada partida com contagem regressiva
+    print("  Nova partida começando...")
     print("  3...")
     time.sleep(0.5)
     print("  2...")
@@ -58,7 +58,7 @@ while continuar == "S":
         print("  3 - Tesoura")
         jogada2 = int(input("  Digite 1, 2 ou 3: "))
         while jogada2 < 1 or jogada2 > 3:
-            print("  Jogada invalida!")
+            print("  Jogada inválida!")
             jogada2 = int(input("  Digite 1, 2 ou 3: "))
 # para a modalidade Humano x Computador, a jogada do jogador é solicitada via input, enquanto a jogada do computador é gerada aleatoriamente com o random
     elif modalidade == 2:
@@ -68,7 +68,7 @@ while continuar == "S":
         print("  3 - Tesoura")
         jogada1 = int(input("  Digite 1, 2 ou 3: "))
         while jogada1 < 1 or jogada1 > 3:
-            print("  Jogada invalida!")
+            print("  Jogada inválida!")
             jogada1 = int(input("  Digite 1, 2 ou 3: "))
         jogada2 = random.randint(1, 3)
 # para a modalidade Computador x Computador, as jogadas de ambos os jogadores são geradas aleatoriamente
@@ -90,6 +90,7 @@ while continuar == "S":
     else:
         nome_jogada2 = "Tesoura"
 # exibição das jogadas de cada jogador
+    print()
     print(f"  {nome1} jogou: {nome_jogada1}")
     time.sleep(1.5)
     print(f"  {nome2} jogou: {nome_jogada2}")
@@ -105,6 +106,7 @@ while continuar == "S":
         print(f"  {nome2} venceu essa partida!")
         vitorias2 = vitorias2 + 1
 # print do placar atualizado após cada partida
+    print()
     print("  Placar atual:")
     print(f"  {nome1}: {vitorias1} vitoria(s)")
     print(f"  {nome2}: {vitorias2} vitoria(s)")
@@ -117,17 +119,18 @@ while continuar == "S":
         continuar = input("  Deseja continuar? (S/N): ").strip().upper()
 
 # fim do jogo e exibição do placar final
-
-print("  Fim de jogo! Placar final:")
-print(f"  {nome1}: {vitorias1} vitoria(s)")
-print(f"  {nome2}: {vitorias2} vitoria(s)")
+print()
+print("  Game Over! Placar Final:")
+time.sleep(0.5)
+print(f"  {nome1}: {vitorias1} vitória(s)")
+print(f"  {nome2}: {vitorias2} vitória(s)")
 print(f"  Empates: {empates}")
 if vitorias1 > vitorias2:
-    print(f"  Grande vencedor: {nome1}! Parabens!")
+    print(f"  Grande vencedor: {nome1}! Parabéns!")
 elif vitorias2 > vitorias1:
-    print(f"  Grande vencedor: {nome2}! Parabens!")
+    print(f"  Grande vencedor: {nome2}! Parabéns!")
 else:
     print("  O jogo terminou empatado!")
-
+time.sleep(1.5)
 print("  Código desenvolvido por: Felipe, Pedro e Victor")
 print("  Game Over! Até a próxima!")
